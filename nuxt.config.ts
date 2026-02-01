@@ -93,6 +93,9 @@ export default defineNuxtConfig({
     '/opensearch.xml': { isr: true },
     '/**': { isr: 60 },
     '/package/**': { isr: 60 },
+    // .well-known/skills endpoints for `npx skills add` CLI
+    '/:pkg/.well-known/skills/**': { isr: 3600 },
+    '/:scope/:pkg/.well-known/skills/**': { isr: 3600 },
     // never cache
     '/search': { isr: false, cache: false },
     '/api/auth/**': { isr: false, cache: false },
